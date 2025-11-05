@@ -45,10 +45,15 @@ export default function Home() {
     [filteredNews]
   );
 
-  const regularNews = useMemo(
-    () => filteredNews.filter((article) => !article.featured),
-    [filteredNews]
-  );
+  // Quando há filtro/busca ativa, mostrar todas as notícias (incluindo destaques)
+  // Quando não há filtro, mostrar apenas as não-destaque (pois destaques já aparecem no hero)
+  const regularNews = useMemo(() => {
+    const hasActiveFilter = selectedCategory !== "Todas" || searchQuery !== "";
+    if (hasActiveFilter) {
+      return filteredNews; // Mostra todas, incluindo destaques
+    }
+    return filteredNews.filter((article) => !article.featured); // Mostra apenas não-destaque
+  }, [filteredNews, selectedCategory, searchQuery]);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -56,7 +61,7 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section com Notícias em Destaque */}
-        {featuredNews.length > 0 && searchQuery === "" && (
+        {featuredNews.length > 0 && searchQuery === "" && selectedCategory === "Todas" && (
           <section className="bg-gradient-to-b from-muted/50 to-background py-12 border-b">
             <div className="container">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">Notícias em Destaque</h2>

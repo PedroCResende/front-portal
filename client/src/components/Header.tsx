@@ -9,10 +9,11 @@ export default function Header() {
 
   const navItems = [
     { label: "Início", path: "/" },
-    { label: "Diplomacia Civil", path: "/?category=Diplomacia Civil" },
-    { label: "Eventos", path: "/?category=Eventos" },
-    { label: "Cerimônias", path: "/?category=Cerimônias" },
+    { label: "Esportes", path: "/?category=Esportes" },
+    { label: "Política", path: "/?category=Política" },
+    { label: "Cultura", path: "/?category=Cultura" },
     { label: "Notícias Internacionais", path: "/?category=Notícias Internacionais" },
+    { label: "Economia", path: "/?category=Economia" },
   ];
 
   return (

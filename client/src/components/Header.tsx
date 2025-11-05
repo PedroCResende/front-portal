@@ -9,11 +9,11 @@ export default function Header() {
 
   const navItems = [
     { label: "Início", path: "/" },
-    { label: "Esportes", path: "/?category=Esportes" },
-    { label: "Política", path: "/?category=Política" },
-    { label: "Cultura", path: "/?category=Cultura" },
-    { label: "Notícias Internacionais", path: "/?category=Notícias Internacionais" },
-    { label: "Economia", path: "/?category=Economia" },
+    { label: "Esportes", path: "/esportes" },
+    { label: "Política", path: "/politica" },
+    { label: "Cultura", path: "/cultura" },
+    { label: "Notícias Internacionais", path: "/noticias-internacionais" },
+    { label: "Economia", path: "/economia" },
   ];
 
   return (

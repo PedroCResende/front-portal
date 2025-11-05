@@ -6,12 +6,22 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import NewsDetail from "./pages/NewsDetail";
+import Esportes from "./pages/Esportes";
+import Politica from "./pages/Politica";
+import Cultura from "./pages/Cultura";
+import NoticiasInternacionais from "./pages/NoticiasInternacionais";
+import Economia from "./pages/Economia";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path="/noticia/:slug" component={NewsDetail} />
+      <Route path="/esportes" component={Esportes} />
+      <Route path="/politica" component={Politica} />
+      <Route path="/cultura" component={Cultura} />
+      <Route path="/noticias-internacionais" component={NoticiasInternacionais} />
+      <Route path="/economia" component={Economia} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
